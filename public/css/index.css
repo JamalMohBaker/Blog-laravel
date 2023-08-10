@@ -1,0 +1,340 @@
+/* Define the animation keyframes */
+/*   Start Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+/*   End Animation */
+/* Start define main class*/
+.liked {
+  color: #6b98e6 !important;
+}
+
+.dis {
+  display: none;
+}
+
+img {
+  -o-object-fit: fill !important;
+     object-fit: fill !important;
+}
+
+/* End define main class*/
+#nav {
+  background-color: #071939;
+  color: #fff;
+}
+#nav button i {
+  color: #6b98e6 !important;
+  transition: all 0.5s linear;
+}
+#nav li {
+  margin-left: 5px;
+}
+#nav li a {
+  color: #fff;
+  font-weight: bolder;
+  position: relative; /* Required for ::after positioning */
+  display: inline-block; /* or inline if you want it to be inline with the text */
+}
+#nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0%;
+  height: 3px;
+  transition: all 0.5s linear;
+}
+#nav li:hover a {
+  color: #6b98e6;
+}
+#nav li:hover a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background-color: #6b98e6;
+  transition: all 0.5s linear;
+}
+#nav .act a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background-color: #6b98e6;
+}
+#nav img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 0 rgba(213, 206, 206, 0.9);
+}
+#nav .icon-container {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  color: #6b98e6;
+  transform: rotate(360deg);
+  transition: all 0.5s linear;
+}
+#nav .icon-container:hover .fa-magnifying-glass {
+  transform: rotate(180deg);
+  transition: all 0.5s linear;
+}
+#nav .fav:hover i {
+  color: #6b98e6;
+}
+
+#add button {
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s linear;
+}
+#add button:hover {
+  background-color: transparent;
+  transition: all 0.5s linear;
+  transition-delay: 0.1s;
+}
+#add button::before, #add button::after {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  background-color: #6b98e6;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transition: all 0.5s linear;
+  transform: translateY(-50%);
+}
+#add button::before {
+  left: -30px;
+}
+#add button::after {
+  right: -30px;
+}
+#add button:hover::before {
+  z-index: -1;
+  animation: left-move 0.3s linear forwards;
+}
+#add button:hover::after {
+  z-index: -1;
+  animation: right-move 0.3s linear forwards;
+}
+#add button .ad {
+  color: #6b98e6;
+  transition: all 0.5s linear;
+}
+#add button:hover .ad {
+  color: #fff;
+  transition: all 0.5s linear;
+}
+
+#posts .read {
+  color: #6b98e6;
+  background-color: transparent;
+  border: none;
+}
+#posts a {
+  text-decoration: none;
+  color: #000;
+}
+#posts .box {
+  box-shadow: 0 2px 15px rgba(162, 155, 155, 0.3);
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 6px;
+  transition: all 0.5s linear;
+}
+#posts .box .card {
+  border: none;
+}
+#posts .box .card img{
+  /* width: 250px !important; */
+  height: 250px !important;
+}
+#posts .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+#details #bigImage {
+  width: 100%;
+}
+#details .all .card {
+  border: none;
+  box-shadow: 0 2px 15px rgba(162, 155, 155, 0.3);
+  padding: 5px;
+}
+#details .all .card .sub-image img {
+  width: 320px;
+  height: 150px;
+}
+#details .all .reactions {
+  font-weight: bolder;
+}
+#details .all .reactions .count {
+  color: #6b98e6;
+  text-decoration: underline;
+}
+#details .all .reactions .icon button {
+  border: none;
+  background-color: transparent;
+}
+#details .all .reactions .icon i {
+  color: rgb(205, 201, 201);
+}
+#details .all .reactions .rate button:hover i {
+  color: yellow;
+}
+#details .all .reactions .comment button:hover i {
+  color: #6b98e6;
+}
+#details .all .add-comment input {
+  border-radius: 16px;
+}
+#details .all .add-comment button {
+  border: none;
+  background-color: transparent;
+}
+#details .all .add-comment button i:hover {
+  color: #6b98e6;
+}
+#details .all .add-rate select {
+  border-radius: 16px;
+}
+#details .all .add-rate button {
+  border: none;
+  background-color: transparent;
+}
+#details .all .add-rate button:hover {
+  color: yellow;
+}
+#details .all .comments {
+  overflow-y: auto;
+  height: 350px;
+}
+#details .all .comments img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+#details .all .comments .image-star i {
+  color: yellow;
+}
+
+#modal .scroll {
+  overflow-y: auto;
+}
+#modal .all {
+  height: 300px;
+}
+#modal .all img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#footer {
+  background-color: #071939;
+  color: #fff;
+  border-radius: 300px/200px 150px 0px 0px;
+}
+#footer img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.design {
+  background-color: #292727;
+  color: #c2c8d3;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+#modal .form-group > textarea.form-control {
+  text-align: left;
+}
+#modal div {
+  border-radius: 20px;
+}
+
+#loading-section {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loading-section .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+#loading-section .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #6b98e6;
+  border-color: #6b98e6 transparent #6b98e6 transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}/*# sourceMappingURL=index.css.map */
